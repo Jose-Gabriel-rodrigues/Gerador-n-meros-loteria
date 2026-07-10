@@ -18,3 +18,10 @@ button{
 
 }
 
+.resultado{
+
+    display:flex;
+    gap:10px;
+
+}
+
