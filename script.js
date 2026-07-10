@@ -24,3 +24,8 @@ button.addEventListener('click', () => {
 
     resultadoDiv.innerHTML = numerosGerados.join(' - ');
 });
+if (jogoSelecionado === 'Mega-Sena') {
+        numerosGerados = gerarNumerosAleatorios(6, 60);
+    } else if (jogoSelecionado === 'Quina') {
+        numerosGerados = gerarNumerosAleatorios(5, 80);
+    }
