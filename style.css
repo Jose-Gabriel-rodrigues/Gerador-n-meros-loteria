@@ -1,36 +1,89 @@
+/* Configuração Geral da Página */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Garante que o app fique bem no centro da tela */
 }
 
-.container{
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
+/* Caixa Principal do Aplicativo */
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Sombra suave ao redor */
+    text-align: center;
+    max-width: 450px;
+    width: 90%; /* Deixa responsivo para celulares automaticamente */
+    display: flex;
+    flex-direction: column; /* Coloca os elementos um embaixo do outro */
+    gap: 15px; /* Espaçamento padrão e limpo entre os elementos */
 }
 
-button{
-
-    background:#189191;
-    color:white;
-    border-radius:10px;
-
+/* Título */
+h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 5px;
 }
 
-.resultado{
-
-    display:flex;
-    gap:10px;
-
+/* Texto de instrução */
+p {
+    color: #666;
+    margin: 0 0 10px 0;
+    font-size: 15px;
 }
 
-@media(max-width:768px){
+/* Campo de Seleção (Dropdown) */
+select {
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+    background-color: #fff;
+    cursor: pointer;
+}
 
-    .container{
+select:focus {
+    border-color: #189191; /* Muda a borda para a sua cor quando clica */
+}
 
-        width:100%;
+/* Botão Customizado */
+button {
+    background-color: #189191;
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+}
 
-    }
+/* Efeitos ao passar o mouse e clicar no botão */
+button:hover {
+    background-color: #147a7a; /* Escurece levemente no hover */
+}
 
+button:active {
+    transform: scale(0.98); /* Efeito de clique físico */
+}
+
+/* Texto do Resultado (Corrigido de .resultado para #resultado) */
+#resultado {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #e8f5f5;
+    color: #189191;
+    border-radius: 8px;
+    font-size: 22px;
+    letter-spacing: 2px; /* Espaçamento bonito entre os números */
+    min-height: 26px; /* Mantém o espaço reservado mesmo antes de gerar */
 }
