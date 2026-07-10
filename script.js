@@ -14,3 +14,13 @@ function gerarNumerosAleatorios(quantidade, maximo) {
 button.addEventListener('click', () => {
     resultadoDiv.innerHTML = "Gerando...";
 });
+button.addEventListener('click', () => {
+    const jogoSelecionado = tipoSelect.value;
+    let numerosGerados = [];
+
+    if (jogoSelecionado === 'Mega-Sena') {
+        numerosGerados = gerarNumerosAleatorios(6, 60);
+    }
+
+    resultadoDiv.innerHTML = numerosGerados.join(' - ');
+});
