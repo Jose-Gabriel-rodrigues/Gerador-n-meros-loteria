@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+button{
+
+    background:#189191;
+    color:white;
+    border-radius:10px;
+
+}
+
+.resultado{
+
+    display:flex;
+    gap:10px;
+
+}
+
+@media(max-width:768px){
+
+    .container{
+
+        width:100%;
+
+    }
+
+}
