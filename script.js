@@ -4,35 +4,26 @@ const tipoSelect = document.getElementById('tipo');
 
 function gerarNumerosAleatorios(quantidade, maximo) {
     let numeros = [];
-    for (let i = 0; i < quantidade; i++) {
+    while (numeros.length < quantidade) {
         let numeroAleatorio = Math.floor(Math.random() * maximo) + 1;
-        numeros.push(numeroAleatorio);
+        if (!numeros.includes(numeroAleatorio)) {
+            numeros.push(numeroAleatorio);
+        }
     }
     return numeros.sort((a, b) => a - b);
 }
 
-button.addEventListener('click', () => {
-    resultadoDiv.innerHTML = "Gerando...";
-});
 button.addEventListener('click', () => {
     const jogoSelecionado = tipoSelect.value;
     let numerosGerados = [];
 
     if (jogoSelecionado === 'Mega-Sena') {
         numerosGerados = gerarNumerosAleatorios(6, 60);
-    }
-
-    resultadoDiv.innerHTML = numerosGerados.join(' - ');
-});
-if (jogoSelecionado === 'Mega-Sena') {
-        numerosGerados = gerarNumerosAleatorios(6, 60);
-    } else if (jogoSelecionado === 'Quina') {
-        numerosGerados = gerarNumerosAleatorios(5, 80);
-    }
-if (jogoSelecionado === 'Mega-Sena') {
-        numerosGerados = gerarNumerosAleatorios(6, 60);
     } else if (jogoSelecionado === 'Quina') {
         numerosGerados = gerarNumerosAleatorios(5, 80);
     } else if (jogoSelecionado === 'Lotofácil') {
         numerosGerados = gerarNumerosAleatorios(15, 25);
     }
+
+    resultadoDiv.innerHTML = numerosGerados.join(' - ');
+});
