@@ -1,4 +1,5 @@
-const button = document.querySelector("button");
+// Altere a primeira linha de querySelector para getElementById
+const button = document.getElementById("gerar");
 const resultadoDiv = document.getElementById("resultado");
 const tipoSelect = document.getElementById("tipo");
 
@@ -51,7 +52,6 @@ button.addEventListener("click", () => {
     // Cria a mensagem de sucesso pós-sorteio
     const aviso = document.createElement("p");
     aviso.textContent = "🎉 Sorteio realizado com sucesso!";
-    aviso.style.color = "#147a7a";
     aviso.style.fontSize = "14px";
     aviso.style.marginTop = "10px";
     
@@ -61,9 +61,9 @@ button.addEventListener("click", () => {
     
     aviso.className = "aviso-sucesso";
     resultadoDiv.after(aviso); // Exibe o aviso abaixo do resultado
-
 });
 
+// Botão para limpar resultado gerado
 const botaoLimpar = document.getElementById("limpar");
 botaoLimpar.addEventListener("click", () => {
     resultadoDiv.innerHTML = ""; // Limpeza estruturada e correta das bolinhas
@@ -71,4 +71,21 @@ botaoLimpar.addEventListener("click", () => {
     // Remove a mensagem de sucesso ao limpar a tela
     const antigoAviso = document.querySelector(".aviso-sucesso");
     if (antigoAviso) antigoAviso.remove();
+});
+
+// Alterna entre o modo claro e o modo escuro
+const btnDark = document.getElementById("toggle-dark");
+btnDark.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    
+    // Altera o texto do botão de acordo com o modo ativo
+    if (document.body.classList.contains("dark-mode")) {
+        btnDark.textContent = "☀️ Modo Claro";
+        btnDark.style.backgroundColor = "#f4f7f6";
+        btnDark.style.color = "#333";
+    } else {
+        btnDark.textContent = "🌙 Modo Escuro";
+        btnDark.style.backgroundColor = "#333";
+        btnDark.style.color = "#fff";
+    }
 });

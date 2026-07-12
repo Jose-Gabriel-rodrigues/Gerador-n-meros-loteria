@@ -124,3 +124,53 @@ button:active {
         opacity: 1; 
     }
 }
+
+/* ==========================================
+   CONFIGURAÇÕES DO MODO ESCURO
+   ========================================== */
+
+/* Fundo geral da página no modo escuro */
+body.dark-mode {
+    background-color: #1e1e1e;
+}
+
+/* Caixa principal do app no modo escuro */
+body.dark-mode .container {
+    background-color: #2d2d2d;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Textos principais no modo escuro */
+body.dark-mode h1, body.dark-mode p {
+    color: #fff;
+}
+
+/* Campo de seleção (Dropdown) no modo escuro */
+body.dark-mode select {
+    background-color: #3b3b3b;
+    border-color: #555;
+    color: #fff;
+}
+
+/* Caixa de resultado em versão escura confortável */
+body.dark-mode #resultado {
+    background-color: #252525;
+    color: #20b2b2;
+    border-color: #20b2b2;
+}
+
+/* Aviso padrão para o Modo Claro: limpo e sem contorno */
+.aviso-sucesso {
+    color: #147a7a;
+    font-weight: bold;
+}
+
+/* Ajuste do aviso para o Modo Escuro: cor clara e contorno para dar contraste */
+body.dark-mode .aviso-sucesso {
+    color: #3fe0e0;
+    text-shadow: 
+        -1px -1px 0 rgba(0, 0, 0, 0.4),  
+         1px -1px 0 rgba(0, 0, 0, 0.4),
+        -1px  1px 0 rgba(0, 0, 0, 0.4),
+         1px  1px 0 rgba(0, 0, 0, 0.4);
+}
