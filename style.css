@@ -87,16 +87,16 @@ button:active {
     font-size: 24px;
     font-weight: bold;
     letter-spacing: 3px; 
-    min-height: 50px; /* Aumentado um pouco para caber as bolas confortavelmente */
-    border: 2px dashed #189191; /* Borda tracejada adicionada */
+    min-height: 50px;
+    border: 2px dashed #189191; /* Borda estilo bilhete de loteria */
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px; /* Espaço entre cada bola */
-    flex-wrap: wrap; /* Quebra linha em celulares */
+    gap: 10px;
+    flex-wrap: wrap; /* Permite quebra de linha em telas menores */
 }
 
-/* Estilo das Bolas de Loteria*/
+/* Estilização dos números em formato de esferas tridimensionais */
 .bola-loteria {
     background: radial-gradient(circle at 30% 30%, #20b2b2, #147a7a);
     color: white;
@@ -108,7 +108,19 @@ button:active {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15), inset -2px -2px 6px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15), inset -2px -2px 6px rgba(0, 0, 0, 0.3);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-    animation: surgimento 0.3s ease-out;
+    animation: surgimento 0.3s ease-out; /* Efeito visual ao gerar */
+}
+
+/* Animação suave para o surgimento das bolas */
+@keyframes surgimento {
+    from { 
+        transform: scale(0); 
+        opacity: 0; 
+    }
+    to { 
+        transform: scale(1); 
+        opacity: 1; 
+    }
 }
