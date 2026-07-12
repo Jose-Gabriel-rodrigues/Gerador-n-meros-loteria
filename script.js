@@ -38,7 +38,15 @@ button.addEventListener("click", () => {
 
     }
 
-    resultadoDiv.textContent = numerosGerados.join(" - ");
+    // Substituido a linha antiga: resultadoDiv.textContent = numerosGerados.join(" - ");
+    // Por este bloco abaixo:
+    resultadoDiv.innerHTML = ""; // Limpa o resultado anterior
+    numerosGerados.forEach(numero => {
+        const bola = document.createElement("span");
+        bola.classList.add("bola-loteria");
+        bola.textContent = String(numero).padStart(2, '0'); // Garante formato 01, 02...
+        resultadoDiv.appendChild(bola);
+    });
 
 });
 
