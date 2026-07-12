@@ -41,3 +41,8 @@ button.addEventListener("click", () => {
     resultadoDiv.textContent = numerosGerados.join(" - ");
 
 });
+
+const botaoLimpar = document.getElementById("limpar");
+botaoLimpar.addEventListener("click", () => {
+    resultadoDiv.textContent = "";
+});
