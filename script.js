@@ -48,9 +48,27 @@ button.addEventListener("click", () => {
         resultadoDiv.appendChild(bola);
     });
 
+    // Cria a mensagem de sucesso pós-sorteio
+    const aviso = document.createElement("p");
+    aviso.textContent = "🎉 Sorteio realizado com sucesso!";
+    aviso.style.color = "#147a7a";
+    aviso.style.fontSize = "14px";
+    aviso.style.marginTop = "10px";
+    
+    // Remove o aviso anterior para não acumular na tela
+    const antigoAviso = document.querySelector(".aviso-sucesso");
+    if (antigoAviso) antigoAviso.remove();
+    
+    aviso.className = "aviso-sucesso";
+    resultadoDiv.after(aviso); // Exibe o aviso abaixo do resultado
+
 });
 
 const botaoLimpar = document.getElementById("limpar");
 botaoLimpar.addEventListener("click", () => {
-    resultadoDiv.textContent = "";
+    resultadoDiv.innerHTML = ""; // Limpeza estruturada e correta das bolinhas
+
+    // Remove a mensagem de sucesso ao limpar a tela
+    const antigoAviso = document.querySelector(".aviso-sucesso");
+    if (antigoAviso) antigoAviso.remove();
 });
